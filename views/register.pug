@@ -1,0 +1,70 @@
+doctype html
+html
+  head
+    title William Bloch - Web Developer
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    meta(name="robots" content="noindex")
+    link(rel='stylesheet' href='/bower_components/bulma/css/bulma.css')
+    link(rel='stylesheet' href='/css/style.css')
+    link(rel="stylesheet" href="/css/font-awesome-4.7.0/css/font-awesome.min.css")
+    script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-107273717-1')
+    script.
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments)};
+      gtag('js', new Date());
+      gtag('config', 'UA-107273717-1');
+  body
+    section.hero.is-default.is-bold.is-fullheight
+      nav#top.nav.section
+        div.container
+          div.nav-left
+            a.nav-item(href="/")
+              img(src="/assets/images/logoWhite3.png" alt="Logo")
+          span.nav-toggle
+            span
+            span
+            span
+          div.nav-right.nav-menu
+            a.nav-item.is-tab(href="/")(class=path=='/'?'active':undefined) Projects
+            if user
+              a.nav-item.is-tab(href="/projects/add")(class=path=='/add'?'active':undefined) Add Project
+            a.nav-item.is-tab(href="/about")(class=path=='/about'?'active':undefined) About
+            a.nav-item.is-tab(href="/resume")(class=path=='/resume'?'active':undefined) Resume
+            a.nav-item.is-tab(href="/contact")(class=path=='/contact'?'active':undefined) Contact
+            if user
+              span.nav-item
+                a.button.is-info(href="/users/logout") Logout
+      != messages('message', locals)
+      if errors
+        each error, i in errors
+          article(class="message is-danger") 
+            div.message-body #{error.msg}
+      section.hero.is-fullheight.is-light
+        div.hero-body
+          div.container
+            div.columns.is-vcentered
+              div.column.is-4.is-offset-4
+                h1.title Register
+                form(method='POST', action='/users/register')
+                  .field
+                    label.label Name:
+                    input.input(name='name', type='text')
+                  .field
+                    label.label Email:
+                    input.input(name='email', type='mail')
+                  .field
+                    label.label Username:
+                    input.input(name='username', type='text')
+                  .field
+                    label.label Password:
+                    input.input(name='password', type='password')
+                  .field
+                    label.label Confirm Password:
+                    input.input(name='password2', type='password')
+                  br
+                  input.button.is-dark.is-hovered(type='submit', value="Submit")
+      script(type='text/javascript' src='/bower_components/jquery/dist/jquery.js')
+      script(type='text/javascript' src='/bower_components/particles.js/particles.js')
+      script(src='https://cdn.jsdelivr.net/jquery.typeit/4.4.0/typeit.min.js')
+      script(type='text/javascript' src='/js/main.js')
+      block scripts

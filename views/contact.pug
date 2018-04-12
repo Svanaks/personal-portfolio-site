@@ -1,0 +1,147 @@
+extends layout
+
+block content
+  if lang == 'en'
+    section.hero.is-fullheight
+      div.hero-body
+        div.container
+          div.columns
+            .column.is-4.is-offset-1
+              h1.title You can contact me...
+              p
+                label.label Contact :
+              |               
+              ul.menu-list                
+                li
+                  a.no-padding-left.icon-text(href='mailto:bloch.william@gmail.com')
+                    span.icon.is-small
+                      i.fa.fa-envelope-o
+                      //- Mail
+                    |  bloch.william@gmail.com
+                br
+              //- Social Medias
+              p
+                label.label Social medias :
+              |               
+              ul.menu-list
+                li
+                  a.no-padding-left.icon-text(href='https://github.com/Svanaks', target="_blank")
+                    span.icon.is-small
+                      i.fa.fa-github
+                      //- Github
+                    |  Github
+                |                 
+                li
+                  a.no-padding-left.icon-text(href='https://www.linkedin.com/in/william-bloch-b175b147', target="_blank")
+                    span.icon.is-small
+                      i.fa.fa-linkedin
+                      //- LinkedIN
+                    |  LinkedIn
+            div.column.is-5.is-offset-1
+              h1.title Or send me a Mail directly !
+              form#contactForm
+                .field
+                  input#to.input(name='to', type='hidden' value='bloch.william@gmail.com')
+                .field
+                  label.label Subject:
+                  input#subject.input(name='subject', type='text')
+                .field
+                  label.label Your email:
+                  input#from.input(name='from', type='mail')
+                .field
+                  label.label Message:
+                  input#text.textarea(name="text")
+                br
+                div.g-recaptcha(data-sitekey="6LcKhEgUAAAAAOIL67WA476yfusobEl3UAAj-O4H")
+                input.button.is-dark.is-hovered(type='submit', value="Send")              
+  else if lang == 'fr'              
+    section.hero.is-fullheight
+      div.hero-body
+        div.container
+          div.columns
+            .column.is-4.is-offset-1
+              h1.title Vous pouvez me contacter...
+              p
+                label.label Contact :
+              |               
+              ul.menu-list                
+                li
+                  a.no-padding-left.icon-text(href='mailto:bloch.william@gmail.com')
+                    span.icon.is-small
+                      i.fa.fa-envelope-o
+                      //- Mail
+                    |  bloch.william@gmail.com
+                br
+              //- Social Medias
+              p
+                label.label Réseaux Sociaux :
+              |               
+              ul.menu-list
+                li
+                  a.no-padding-left.icon-text(href='https://github.com/Svanaks', target="_blank")
+                    span.icon.is-small
+                      i.fa.fa-github
+                      //- Github
+                    |  Github
+                |                 
+                li
+                  a.no-padding-left.icon-text(href='https://www.linkedin.com/in/william-bloch-b175b147', target="_blank")
+                    span.icon.is-small
+                      i.fa.fa-linkedin
+                      //- LinkedIN
+                    |  LinkedIn
+            div.column.is-5.is-offset-1
+              h1.title Ou m'envoyer un mail directement !
+              form#contactForm
+                .field
+                  input#to.input(name='to', type='hidden' value='bloch.william@gmail.com')
+                .field
+                  label.label Sujet:
+                  input#subject.input(name='subject', type='text')
+                .field
+                  label.label Votre mail:
+                  input#from.input(name='from', type='mail')
+                .field
+                  label.label Message:
+                  input#text.textarea(name="text")
+                br
+                div.g-recaptcha(data-sitekey="6LcKhEgUAAAAAOIL67WA476yfusobEl3UAAj-O4H")
+                input.button.is-dark.is-hovered(type='submit', value="Envoyer")
+  script.
+    document.getElementById('contactForm').addEventListener('submit', submitForm);
+
+    function submitForm(e){
+      e.preventDefault();
+      
+
+      const to = document.querySelector('#to').value;
+      const subject = document.querySelector('#subject').value;
+      const from = document.querySelector('#from').value;
+      const text = document.querySelector('#text').value;
+      const captcha = document.querySelector('#g-recaptcha-response').value;
+
+      fetch('/sendMail', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json, text/plain, */*',
+          'Content-type':'application/json'
+        },
+        body:JSON.stringify({to:to, subject:subject, from:from, text:text, captcha:captcha})
+      })
+      .then((res) => res.json())
+      .then((data) => {
+        if(data.success == false) {
+          alert(data.msg);
+        } else {
+          console.log(data);
+          redirect: window.location.replace(data.url);
+          alert('Your message has been sent !');
+        }
+      });
+    }
+
+    
+
+
+
+ 

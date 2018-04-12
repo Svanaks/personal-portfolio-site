@@ -1,0 +1,18 @@
+.bg-img{
+	height:90vh!important;
+}
+
+.tile{
+	-ms-flex-preferred-size: auto!important;
+	-webkit-flex-preferred-size: auto!important;
+}
+
+.align-start{
+	display: block!important;
+}
+
+/*
+.hero.is-fullheight{
+height: 100vh!important;
+}
+*/

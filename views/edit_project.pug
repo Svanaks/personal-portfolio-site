@@ -1,0 +1,54 @@
+extends layout
+
+block content
+  section.hero.is-fullheight.is-light
+    div.hero-body
+      div.container
+        div.columns.is-vcentered
+          div.column.is-8.is-offset-2
+            h1 #{title}
+            form(method='POST', action='/projects/edit/'+project._id enctype='multipart/form-data')
+              .field
+                label.label Image Link:
+                input.input(name='image', type='file', value=project.image)
+              .field
+                label.label Image 2 Link:
+                input.input(name='image', type='file', value=project.image2)
+              .field
+                label.label Name:
+                input.input(name='name', type='text', value=project.name)
+              .field
+                label.label Slug:
+                input.input(name='slug', type='text', value=project.slug)
+              .field
+                label.label Year:
+                input.input(name='year', type='text', value=project.year)
+              .field
+                label.label Short Description En:
+                textarea.textarea(name='shortDescriptionEn')= project.shortDescription.en
+              .field
+                label.label Short Description Fr:
+                textarea.textarea(name='shortDescriptionFr')= project.shortDescription.fr
+              .field
+                label.label Long Description En:
+                textarea.textarea(name='descriptionEn')= project.description.en
+              .field
+                label.label Long Description Fr:
+                textarea.textarea(name='descriptionFr')= project.description.fr
+              .field
+                label.label Long Description 2 En:
+                textarea.textarea(name='description2En')= project.description2.en
+              .field
+                label.label Long Description 2 Fr:
+                textarea.textarea(name='description2Fr')= project.description2.fr
+              .field
+                label.label Client:
+                input.input(name='client', type='text', value=project.client)
+              .field
+                label.label Technology:
+                input.input(name='technology', type='text', value=project.technology)
+              .field
+                label.label Technology:
+                input.input(name='technology2', type='text', value=project.technology2)
+              br
+              input.button.is-dark.is-hovered(type='submit', value="Submit")

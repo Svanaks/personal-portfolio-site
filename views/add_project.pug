@@ -1,0 +1,54 @@
+extends layout
+
+block content
+  section.hero.is-fullheight.is-light
+    div.hero-body
+      div.container
+        div.columns.is-vcentered
+          div.column.is-8.is-offset-2
+            h1 #{title}
+            form(method='POST', action='/projects/add' enctype='multipart/form-data')
+              .field
+                label.label Image Link:
+                input.input(name='image', type='file')
+              .field
+                label.label Image 2 Link:
+                input.input(name='image', type='file')
+              .field
+                label.label Name:
+                input.input(name='name', type='text')
+              .field
+                label.label Slug:
+                input.input(name='slug', type='text')
+              .field
+                label.label Year:
+                input.input(name='year', type='text')
+              .field
+                label.label Short Description En:
+                textarea.textarea(name='shortDescriptionEn')
+              .field
+                label.label Short Description Fr:
+                textarea.textarea(name='shortDescriptionFr')
+              .field
+                label.label Long Description En:
+                textarea.textarea(name='descriptionEn')
+              .field
+                label.label Long Description Fr:
+                textarea.textarea(name='descriptionFr')
+              .field
+                label.label Long Description 2 En:
+                textarea.textarea(name='description2En')
+              .field
+                label.label Long Description 2 Fr:
+                textarea.textarea(name='description2Fr')
+              .field
+                label.label Client:
+                input.input(name='client', type='text')
+              .field
+                label.label Technology:
+                input.input(name='technology', type='text')
+              .field
+                label.label Technology:
+                input.input(name='technology2', type='text')
+              br
+              input.button.is-dark.is-hovered(type='submit', value="Submit")

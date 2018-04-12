@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  div.container.section
+    div.columns.is-multiline
+      each project, i in projects
+        div.column.is-4
+          div.card
+            a(href='/projects/'+project.slug)(style="color:#4a4a4a!important;")
+              div#hovercard.card-image  
+                h5.grid-title View more 
+                figure.image.is-4by3
+                  img(src='/assets/images/'+project.image alt= project.name)
+              div.card-content
+                div.panel-block-item.text-centered
+                  span
+                    p(style="font-size:18px;")
+                      strong #{project.name}
+                      |  -  #{project.year}
+                    p= project.shortDescription.localized

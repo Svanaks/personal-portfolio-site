@@ -1,0 +1,70 @@
+doctype html
+html
+  head  
+    title William Bloch - Web Developer
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    meta(name='description' content='Hi, I\'m a Full Stack JavaScript Web Developer based in Paris. I\'m currently working for Saint Gobain Telecom and will look for new job opportunities for September 2018.')
+    link(rel='stylesheet' href='/bower_components/bulma/css/bulma.css')
+    link(rel='stylesheet' href='/css/style.css')
+    link(rel="stylesheet" href="/css/font-awesome-4.7.0/css/font-awesome.min.css")
+    <!--[if gt IE 8]><!-->
+       link(rel='stylesheet', href='/css/style-ie.css')
+    <!--<![endif]-->
+    script(src='https://www.google.com/recaptcha/api.js')     
+    script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-107273717-1')
+    script.
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments)};
+      gtag('js', new Date());
+      gtag('config', 'UA-107273717-1');
+  body
+    section.hero.is-default.is-bold.is-fullheight
+      nav#top.nav.section
+        div.container
+          div.nav-left
+            a.nav-item(href="/")
+              img(src="/assets/images/logoWhite3.png" alt="Logo")
+          span.nav-toggle
+            span
+            span
+            span
+          div.nav-right.nav-menu
+            if lang == 'en'
+              a.nav-item.is-tab(href="/projects")(class=path=='/projects'?'active':undefined) Projects
+              if user
+                a.nav-item.is-tab(href="/projects/add")(class=path=='/add'?'active':undefined) Add Project
+              a.nav-item.is-tab(href="/about")(class=path=='/about'?'active':undefined) About
+              a.nav-item.is-tab(href="/resume")(class=path=='/resume'?'active':undefined) Resume
+              a.nav-item.is-tab(href="/contact")(class=path=='/contact'?'active':undefined) Contact
+              a#fr.nav-item.is-tab(href="#" data-id='fr') 
+                img(src="/assets/images/france.png" alt="fr" data-id='fr')
+              a#en.nav-item.is-tab(href="#" data-id='en') 
+                img(src="/assets/images/united-kingdom.png" alt="uk" data-id='en')
+              if user
+                span.nav-item
+                  a.button.is-info(href="/users/logout") Logout
+            else if lang == 'fr'
+              a.nav-item.is-tab(href="/projects")(class=path=='/projects'?'active':undefined) Projets
+              if user
+                a.nav-item.is-tab(href="/projects/add")(class=path=='/add'?'active':undefined) Ajout Projet
+              a.nav-item.is-tab(href="/about")(class=path=='/about'?'active':undefined) A propos
+              a.nav-item.is-tab(href="/resume")(class=path=='/resume'?'active':undefined) CV
+              a.nav-item.is-tab(href="/contact")(class=path=='/contact'?'active':undefined) Contact
+              a#fr.nav-item.is-tab(href="#" data-id='fr') 
+                img(src="/assets/images/france.png" alt="fr" data-id='fr')
+              a#en.nav-item.is-tab(href="#" data-id='en') 
+                img(src="/assets/images/united-kingdom.png" alt="uk" data-id='en')
+              if user
+                span.nav-item
+                  a.button.is-info(href="/users/logout") Logout
+      != messages('message', locals)
+      if errors
+        each error, i in errors
+          article(class="message is-danger") 
+            div.message-body #{error.msg}
+      block content
+      script(type='text/javascript' src='/bower_components/jquery/dist/jquery.js')
+      script(src='https://cdn.jsdelivr.net/jquery.typeit/4.4.0/typeit.min.js')
+      script(type='text/javascript' src='/js/main.js')
+      block scripts
+        

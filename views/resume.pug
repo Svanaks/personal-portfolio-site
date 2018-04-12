@@ -1,0 +1,386 @@
+extends layout
+
+block content              
+  .columns.is-gapless.forced-gapless
+    if lang == 'en'
+      #izquierda.column.is-3-desktop.is-4-tablet
+        section.hero.is-light.is-fullheight
+          div.hero-head.has-text-centered
+            //- Image
+            figure.image
+              img(src='/assets/images/avatarNew.jpg')
+            div#name
+              h1.title William Bloch
+              |             
+              h2.subtitle Full Stack JS Developer
+          |         
+          .hero-body.align-start
+            .container-resume.is-fluid-resume
+              aside#lista.menu
+                //- Contact
+                p.menu-label
+                  | Contact
+                |               
+                ul.menu-list                
+                  li
+                    a.icon-text(href='mailto:bloch.william@gmail.com')
+                      span.icon.is-small
+                        i.fa.fa-envelope-o
+                        //- Mail
+                      |  bloch.william@gmail.com
+                //- Hobbies
+                p.menu-label
+                  | Hobbies
+                |               
+                ul.menu-list
+                  li
+                    a(role='button') Jiu-jitsu | Thai Boxing
+                  |                 
+                  li
+                    a(role='button') Drawing
+                //- Social
+                p.menu-label
+                  | Social medias
+                |               
+                ul.menu-list
+                  li
+                    a.icon-text(href='https://github.com/Svanaks', target="_blank")
+                      span.icon.is-small
+                        i.fa.fa-github
+                        //- Github
+                      |  Github
+                  |                 
+                  li
+                    a.icon-text(href='https://www.linkedin.com/in/william-bloch-b175b147', target="_blank")
+                      span.icon.is-small
+                        i.fa.fa-linkedin
+                        //- LinkedIN
+                      |  LinkedIn
+      //- Column
+      .column
+        section.hero.is-fullheight
+          .hero-body.align-start
+            .container-resume.is-fluid-resume
+              .content
+                h1 Abstract
+                |               
+                p
+                  | I'm 
+                  strong William Bloch
+                  | , I live in Paris, France. I'm a 26 years old web developer interested in working on technical and creative projects. 
+                //- Studies
+                button.button.is-info
+                  a(href="/assets/files/cv.pdf", alt="CV", target="_blank")(style="color:white;") Download PDF
+                h2 Studies
+                |               
+                ul
+                  li
+                    strong 2018 
+                    | - Master's degree: Expert in SI managment and Development
+                    span.is-italic  - HiTeMA
+                  li
+                    strong 2016 
+                    | - Web Development formation
+                    span.is-italic  - HiTeMA
+                  li
+                    strong 2015 
+                    | - Master's degree: Neuropsychology
+                    span.is-italic  - Paris 8 University
+                  li
+                    strong 2012 
+                    | - Bachelor's degree: Psychology
+                    span.is-italic  - Paris 8 University
+                  li
+                    strong 2009 
+                    | - High School Diploma (Sciences)
+                //- Experiences
+                h2 Experiences
+                |               
+                .box
+                  article.media
+                    .media-content
+                      .content
+                        p
+                          strong Saint-Gobain Telecom
+                          |    
+                          small 2016 - Current
+                          |                         
+                          br
+                          |  Development and maintenance of web applications. Php - Oracle environement. International team.
+                |               
+                .box
+                  article.media
+                    .media-content
+                      .content
+                        p
+                          strong Venga
+                          |  
+                          small May 2015 - August 2015
+                          |                         
+                          br
+                          |  Internship in a startup. Development of one Laravel5/Php website. Helped developing an AngularJs application. Helped building the project both on technical aspects and commercial aspects (Business model, mock-ups...)
+                //- Skills
+                h2 Skills
+                |               
+                #habilidades
+                  .columns
+                    .column.is-3.forced-gapless
+                      h5.subtitle.habilidad Html / PUG - Css
+                    |                   
+                    .column
+                      progress.progress.is-warning(value='90', max='100')
+                  |  
+                  .columns
+                    .column.is-3.forced-gapless
+                      h5.subtitle.habilidad Javascript
+                    |                   
+                    .column
+                      progress.progress.is-warning(value='80', max='100')
+                  |                 
+                  .columns
+                    .column.is-3.forced-gapless
+                      h5.subtitle.habilidad NodeJs
+                    |                   
+                    .column
+                      progress.progress.is-warning(value='75', max='100')
+                  |                 
+                  .columns
+                    .column.is-3.forced-gapless
+                      h5.subtitle.habilidad Express
+                    |                   
+                    .column
+                      progress.progress.is-warning(value='75', max='100')
+                  .columns
+                    .column.is-3.forced-gapless
+                      h5.subtitle.habilidad MongoDb
+                    |                   
+                    .column
+                      progress.progress.is-warning(value='70', max='100')
+                  .columns
+                    .column.is-3.forced-gapless
+                      h5.subtitle.habilidad Photoshop
+                    |                   
+                    .column
+                      progress.progress.is-warning(value='70', max='100')
+                  .columns
+                    .column.is-3.forced-gapless
+                      h5.subtitle.habilidad Php
+                    |                   
+                    .column
+                      progress.progress.is-warning(value='65', max='100')
+                  .columns
+                    .column.is-3.forced-gapless
+                      h5.subtitle.habilidad Symfony2
+                    |                   
+                    .column
+                      progress.progress.is-warning(value='65', max='100')
+                  .columns
+                    .column.is-3.forced-gapless
+                      h5.subtitle.habilidad Sql
+                    |                   
+                    .column
+                      progress.progress.is-warning(value='60', max='100')
+                  .columns
+                    .column.is-3.forced-gapless
+                      h5.subtitle.habilidad AngularJs (1.x)
+                    |                   
+                    .column
+                      progress.progress.is-warning(value='50', max='100')
+                  .columns
+                    .column.is-3.forced-gapless
+                      h5.subtitle.habilidad Wordpress
+                    |                   
+                    .column
+                      progress.progress.is-warning(value='35', max='100')              
+    else if lang == 'fr'                  
+      //- Column
+      #izquierda.column.is-3-desktop.is-4-tablet
+        section.hero.is-light.is-fullheight
+          div.hero-head.has-text-centered
+            //- Image
+            figure.image
+              img(src='/assets/images/avatarNew.jpg')
+            div#name
+              h1.title William Bloch
+              |             
+              h2.subtitle Développeur JS Full Stack
+          |         
+          .hero-body.align-start
+            .container-resume.is-fluid-resume
+              aside#lista.menu
+                //- Contact
+                p.menu-label
+                  | Contact
+                |               
+                ul.menu-list                
+                  li
+                    a.icon-text(href='mailto:bloch.william@gmail.com')
+                      span.icon.is-small
+                        i.fa.fa-envelope-o
+                        //- Mail
+                      |  bloch.william@gmail.com
+                //- Hobbies
+                p.menu-label
+                  | Hobbies
+                |               
+                ul.menu-list
+                  li
+                    a(role='button') Jiu-jitsu | Boxe Thai
+                  |                 
+                  li
+                    a(role='button') Dessin
+                p.menu-label
+                  | Réseaux Sociaux
+                |               
+                ul.menu-list
+                  li
+                    a.icon-text(href='https://github.com/Svanaks', target="_blank")
+                      span.icon.is-small
+                        i.fa.fa-github
+                        //- Github
+                      |  Github
+                  |                 
+                  li
+                    a.icon-text(href='https://www.linkedin.com/in/william-bloch-b175b147', target="_blank")
+                      span.icon.is-small
+                        i.fa.fa-linkedin
+                        //- LinkedIN
+                      |  LinkedIn
+      //- Column
+      .column
+        section.hero.is-fullheight
+          .hero-body.align-start
+            .container-resume.is-fluid-resume
+              .content
+                h1 Résumé
+                |               
+                p
+                  | Je m'appelle 
+                  strong William Bloch
+                  | , je vis à Paris, France. Je suis un développeur web de 26 ans cherchant à travailler sur des projets à la fois techniques et créatifs.
+                //- Studies
+                button.button.is-info
+                  a(href="/assets/files/cv.pdf", alt="CV", target="_blank")(style="color:white;") Télécharger PDF
+                h2 Etudes
+                |               
+                ul
+                  li
+                    strong 2018 
+                    | - Master: Expert en développement et en management du SI.
+                    span.is-italic  - HiTeMA
+                  li
+                    strong 2016 
+                    | - Formation en développement Web.
+                    span.is-italic  - HiTeMA
+                  li
+                    strong 2015 
+                    | - Master: Neuropsychologie
+                    span.is-italic  - Université Paris 8
+                  li
+                    strong 2012 
+                    | - Licence: Psychologie
+                    span.is-italic  - Université Paris 8
+                  li
+                    strong 2009 
+                    | - Baccalauréat (Scientifique)
+                //- Experiences
+                h2 Experiences
+                |               
+                .box
+                  article.media
+                    .media-content
+                      .content
+                        p
+                          strong Saint-Gobain Telecom
+                          |    
+                          small 2016 - Actuel
+                          |                         
+                          br
+                          |  Développement et maintenance d'applications web. Php - Oracle. 2quipe internationale.
+                |               
+                .box
+                  article.media
+                    .media-content
+                      .content
+                        p
+                          strong Venga
+                          |  
+                          small Mai 2015 - Aout 2015
+                          |                         
+                          br
+                          |  Stage dans une startup. Développement d'un site web Laravel5/php. J'ai participé au développement d'une application en AngularJs en aidant à la réalisation du projet à la fois sur les aspects techniques et commerciaux.(Business model, maquettes...)
+                h2 Compétences
+                |               
+                #habilidades
+                  .columns
+                    .column.is-3.forced-gapless
+                      h5.subtitle.habilidad Html / PUG - Css
+                    |                   
+                    .column
+                      progress.progress.is-warning(value='90', max='100')
+                  |  
+                  .columns
+                    .column.is-3.forced-gapless
+                      h5.subtitle.habilidad Javascript
+                    |                   
+                    .column
+                      progress.progress.is-warning(value='80', max='100')
+                  |                 
+                  .columns
+                    .column.is-3.forced-gapless
+                      h5.subtitle.habilidad NodeJs
+                    |                   
+                    .column
+                      progress.progress.is-warning(value='75', max='100')
+                  |                 
+                  .columns
+                    .column.is-3.forced-gapless
+                      h5.subtitle.habilidad Express
+                    |                   
+                    .column
+                      progress.progress.is-warning(value='75', max='100')
+                  .columns
+                    .column.is-3.forced-gapless
+                      h5.subtitle.habilidad MongoDb
+                    |                   
+                    .column
+                      progress.progress.is-warning(value='70', max='100')
+                  .columns
+                    .column.is-3.forced-gapless
+                      h5.subtitle.habilidad Photoshop
+                    |                   
+                    .column
+                      progress.progress.is-warning(value='70', max='100')
+                  .columns
+                    .column.is-3.forced-gapless
+                      h5.subtitle.habilidad Php
+                    |                   
+                    .column
+                      progress.progress.is-warning(value='65', max='100')
+                  .columns
+                    .column.is-3.forced-gapless
+                      h5.subtitle.habilidad Symfony2
+                    |                   
+                    .column
+                      progress.progress.is-warning(value='65', max='100')
+                  .columns
+                    .column.is-3.forced-gapless
+                      h5.subtitle.habilidad Sql
+                    |                   
+                    .column
+                      progress.progress.is-warning(value='60', max='100')
+                  .columns
+                    .column.is-3.forced-gapless
+                      h5.subtitle.habilidad AngularJs (1.x)
+                    |                   
+                    .column
+                      progress.progress.is-warning(value='50', max='100')
+                  .columns
+                    .column.is-3.forced-gapless
+                      h5.subtitle.habilidad Wordpress
+                    |                   
+                    .column
+                      progress.progress.is-warning(value='35', max='100')
+
+
+                

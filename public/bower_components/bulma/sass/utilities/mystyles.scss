@@ -1,0 +1,8 @@
+@import "../sass/utilities/initial-variables";
+@import "../sass/utilities/functions";
+
+// 2. Set your own initial variables
+// Update blue
+$blue: ##4b14c;
+
+@import "../bulma";

@@ -1,0 +1,38 @@
+extends layout
+
+block content
+  .container.section
+    .tile.is-ancestor
+      .tile.is-5.is-vertical.is-parent
+        .tile.is-child
+          p.title= project.name
+          |       
+          p(style="display:inline;")= project.year + ' | ' + project.technology
+          if project.technology2
+            p(style="display:inline;")= ' - ' + project.technology2 
+          |
+          if project.client
+            p.is-italic= 'Client: '+ project.client 
+          |
+          if user
+            if user.id ==project._id 
+            p 
+              a.button.is-info(href='/projects/edit/'+project._id) Edit
+              a.button.is-danger.delete-project(href='#',data-id=project._id style='margin-left:5px;') Delete
+        |     
+        .tile.is-child 
+          p= project.description.localized
+      |   
+      .tile.is-parent
+        .tile.is-child
+          figure.image.is-4by3
+            img(src='/assets/images/'+project.image alt= project.name)
+    .tile.is-ancestor
+      .tile.is-parent
+        .tile.is-child
+          figure.image.is-4by3
+            img(src='/assets/images/'+project.image2 alt= project.name)
+      .tile.is-5.is-vertical.is-parent
+        .tile.is-child 
+          p= project.description2.localized
+        |     

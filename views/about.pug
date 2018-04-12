@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  div.columns.is-fullheight(style="margin-right:0px!important; margin-left:0px!important;")
+    div.column.right-side
+      section.hero.is-fullheight.is-default.is-bold
+        div.hero-body
+          div.container
+            div.columns
+              div.column.is-4.is-offset-1
+                figure.image
+                  img(src="/assets/images/avatarNew.jpg" alt="Description")
+              div.column.is-5.is-offset-1
+                if lang == 'en'
+                  h1.blog-title About me!
+                  h2.blog-summary 
+                    p Hi ! My name is William Bloch and I'm a 26 years old alternating student in web development. What? 26 years old and still studying ? Well… yeah :) I graduated in Neurosciences and did a bit of 3D animation before deciding I wanted to learn web development. I like a lot of things and I'm a curious guy, that's why I enjoy the web and the possibility to work on different projects. 
+                    p I currently live in Paris and I'm working for Saint-Gobain Telecom. In this website you'll find some information about me, such as my projects, experience, skills… If you wish to learn more about me or my work, you can find me on 
+                      a(href="https://www.linkedin.com/in/william-bloch-b175b147", alt="LinkedIn", target="_blank") LinkedIn
+                      span  or 
+                      a(href="https://github.com/Svanaks", alt="Github", target="_blank") Github
+                      span  (because it is important to share, even the bad stuff!).
+                    p I have some experience with Php, Sql (MySql and Oracle) but I'm mostly interested in working with JavaScript, Node & Express for the backend side. I would love to work in a team composed of people from different backgrounds, with different skillsets, to share and learn together ! I'm also trying to improve my design skills. ;)
+                else if lang == 'fr'  
+                  h1.blog-title A propos de moi!
+                  h2.blog-summary 
+                    p Bienvenue ! Je m'appelle William Bloch, 26 ans et je suis étudiant en développement web en alternance. Comment ça ? 26 ans et encore étudiant ? Et bien oui ;) Je suis diplomé en Neurosciences et j'ai aussi fait un peu de cinéma d'animation 3D avant de décider de me lancer dans le développement web ! J'aime beaucoup de choses et je suis assez curieux, du coup, j'aime beaucoup la possibilité qu'offre le web de travailler sur des projets variés. 
+                    p Je vis actuellement sur Paris et travaille pour Saint-Gobain Telecom. Sur ce site, vous trouverez des informations sur moi : mes projets, expériences et compétences. Si vous voulez en apprendre plus sur mon travail, vous pouvez me trouver sur 
+                      a(href="https://www.linkedin.com/in/william-bloch-b175b147", alt="LinkedIn", target="_blank") LinkedIn
+                      span  ou 
+                      a(href="https://github.com/Svanaks", alt="Github", target="_blank") Github
+                      span  (parce que c'est important de partager, même les trucs pas fou !).
+                    p J'ai de l'experience avec Php, Sql (MySql et Oracle) mais je cherche principalement à travailler en JavaScript (Node, Express, MongoDB et Angular). Pour la suite, j'aimerais travailler dans une équipe composée de personnes d'horizons variés, ayant des compétences diverses, et ce afin de partager et d'apprendre ensemble ! Je cherche aussi à progresser en design ;)
